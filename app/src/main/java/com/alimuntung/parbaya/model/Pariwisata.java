@@ -2,17 +2,20 @@ package com.alimuntung.parbaya.model;
 
 public class Pariwisata
 {
-    private Double lnt;
+    private Double lat;
     private Double lng;
     private String judul;
-    public Pariwisata(Double lnt, Double lng,String judul){
-        this.lnt = lnt;
+    private String deskripsi;
+    public Pariwisata(Double lat, Double lng,String judul,String deskripsi){
+        this.lat = lat;
         this.lng = lng;
         this.judul = judul;
+        this.deskripsi = deskripsi;
+
     }
 
-    public Double getLnt() {
-        return lnt;
+    public Double getLat() {
+        return lat;
     }
 
     public Double getLng() {
@@ -21,5 +24,9 @@ public class Pariwisata
 
     public String getJudul() {
         return judul;
+    }
+
+    public String getDeskripsi(){
+        return deskripsi;
     }
 }
