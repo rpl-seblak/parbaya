@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "469970280902",
+    "firebase_url": "https://parbaya-d5b6b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "parbaya-d5b6b",
+    "storage_bucket": "parbaya-d5b6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469970280902:android:7864dcec12ef1780b0d2c7",
+        "android_client_info": {
+          "package_name": "com.alimuntung.parbaya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469970280902-nfd6b11jvs7gg7quj7n3gk6c9gek5lmt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0sZL0TSVgg16ZQn1H8SzdX6TnhzrbAug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469970280902-nfd6b11jvs7gg7quj7n3gk6c9gek5lmt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
