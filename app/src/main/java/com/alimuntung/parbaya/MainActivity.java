@@ -3,30 +3,48 @@ package com.alimuntung.parbaya;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.alimuntung.parbaya.adapter.OnBoardingAdapter;
 import com.alimuntung.parbaya.helper.OnBoardingItem;
 import com.alimuntung.parbaya.model.Pariwisata;
 import com.alimuntung.parbaya.model.PariwisataDB;
+import com.alimuntung.parbaya.view.CreateWisataActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private OnBoardingAdapter onBoardingAdapter;
+    private Button lets;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        lets = findViewById(R.id.getstart);
         setOnBoardingItems();
 
         ViewPager2 onBoardingViewPager = findViewById(R.id.onboarding);
         onBoardingViewPager.setAdapter(onBoardingAdapter);
+
+
 //        PariwisataDB pwd = new PariwisataDB();
 //        Pariwisata pw = new Pariwisata(2.0, 2.0, "test","coba");
 //        pwd.add(pw);
+        lets.setOnClickListener(
+                view -> {
+                    Intent intent = new Intent(this, CreateWisataActivity.class);
+                    startActivity(intent);
+                }
+        );
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
     }
 
     private void setOnBoardingItems(){

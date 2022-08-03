@@ -14,6 +14,7 @@ public class Pariwisata
 
     }
 
+
     public Double getLat() {
         return lat;
     }
