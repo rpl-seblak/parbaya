@@ -13,13 +13,14 @@ public class WisataInteractorImpl implements WisataContract.Interactor {
 
     @Override
     public void storeWisata(Pariwisata pws, PariwisataDB db) {
-        db.storePariwisata(pws);
         listener.onStart();
+        db.storePariwisata(pws);
+        listener.onEnd();
         listener.onSuccess();
     }
 
     @Override
-    public void showWisata() {
-
+    public void showWisata(PariwisataDB db) {
+        db.readPariwisata();
     }
 }

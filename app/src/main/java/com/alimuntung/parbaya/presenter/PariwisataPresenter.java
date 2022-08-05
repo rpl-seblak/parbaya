@@ -5,9 +5,11 @@ import com.alimuntung.parbaya.interactor.WisataInteractorImpl;
 import com.alimuntung.parbaya.model.Pariwisata;
 import com.alimuntung.parbaya.model.PariwisataDB;
 
+import java.util.ArrayList;
+
 public class PariwisataPresenter implements WisataContract.Presenter, WisataContract.onOperationListener{
     private WisataContract.WisataView view;
-    private PariwisataDB pwd = new PariwisataDB();
+    private PariwisataDB pwd = new PariwisataDB(this);
     private WisataInteractorImpl interactor;
 
     public PariwisataPresenter(WisataContract.WisataView view){
@@ -17,7 +19,7 @@ public class PariwisataPresenter implements WisataContract.Presenter, WisataCont
 
     @Override
     public void onLoadWisata() {
-
+        interactor.showWisata(pwd);
     }
 
     @Override
@@ -43,5 +45,10 @@ public class PariwisataPresenter implements WisataContract.Presenter, WisataCont
     @Override
     public void onEnd() {
         view.hideProgress();
+    }
+
+    @Override
+    public void onRead(ArrayList<Pariwisata> pariwisatas) {
+        view.showListWisata(pariwisatas);
     }
 }

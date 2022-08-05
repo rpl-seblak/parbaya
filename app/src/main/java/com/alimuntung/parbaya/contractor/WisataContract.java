@@ -3,17 +3,19 @@ package com.alimuntung.parbaya.contractor;
 import com.alimuntung.parbaya.model.Pariwisata;
 import com.alimuntung.parbaya.model.PariwisataDB;
 
+import java.util.ArrayList;
+
 public class WisataContract {
     public interface WisataView {
         void showProgress();
         void hideProgress();
-        void showListWisata();
+        void showListWisata(ArrayList<Pariwisata> pariwisatas);
         void showMessage();
     }
 
     public interface Interactor{
         void storeWisata(Pariwisata pws, PariwisataDB db);
-        void showWisata();
+        void showWisata(PariwisataDB db);
     }
 
     public interface Presenter{
@@ -26,5 +28,6 @@ public class WisataContract {
         void onFailure();
         void onStart();
         void onEnd();
+        void onRead(ArrayList<Pariwisata> pariwisatas);
     }
 }
