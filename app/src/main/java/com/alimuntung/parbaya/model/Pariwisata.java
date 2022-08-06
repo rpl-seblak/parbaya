@@ -8,16 +8,20 @@ public class Pariwisata implements Serializable
     private Double lng;
     private String judul;
     private String deskripsi;
+    private String alamat;
+    private String url;
 
     public Pariwisata(){
 
     }
 
-    public Pariwisata(Double lat, Double lng,String judul,String deskripsi){
+    public Pariwisata(Double lat, Double lng,String judul,String deskripsi, String alamat, String url){
         this.lat = lat;
         this.lng = lng;
         this.judul = judul;
         this.deskripsi = deskripsi;
+        this.alamat = alamat;
+        this.url = url;
     }
 
 
@@ -53,18 +57,31 @@ public class Pariwisata implements Serializable
         this.deskripsi = deskripsi;
     }
 
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
-
         return "Pariwisata{" +
-
-                "judul=" + judul +
-
-                ", desc=" + deskripsi +
-
-                ", lat=" + lat +
-                ", lng =" + lng +
-                "}";
-
+                "lat=" + lat +
+                ", lng=" + lng +
+                ", judul='" + judul +
+                ", deskripsi='" + deskripsi  +
+                ", alamat='" + alamat  +
+                ", url='" + url  +
+                '}';
     }
 }

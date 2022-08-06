@@ -14,6 +14,8 @@ import com.alimuntung.parbaya.R;
 import com.alimuntung.parbaya.contractor.WisataContract;
 import com.alimuntung.parbaya.model.Pariwisata;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapter.NearbyWisataViewHolder> {
@@ -47,14 +49,17 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
     class NearbyWisataViewHolder extends RecyclerView.ViewHolder{
         private TextView tv_judul;
         private CardView cv_wisata;
+        private TextView tv_lokasi;
         public NearbyWisataViewHolder(@NonNull View itemView){
             super(itemView);
          tv_judul = itemView.findViewById(R.id.tvJudulwisata);
          cv_wisata = itemView.findViewById(R.id.cvWisata);
+         tv_lokasi = itemView.findViewById(R.id.tvLokasiWisata);
         }
 
         void setNearbyWisataData(Pariwisata pw){
             tv_judul.setText(pw.getJudul());
+            tv_lokasi.setText(pw.getAlamat());
             cv_wisata.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
