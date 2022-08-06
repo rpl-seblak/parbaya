@@ -39,13 +39,13 @@ public class CreateWisataActivity extends AppCompatActivity implements WisataCon
         desc = findViewById(R.id.txtDesc);
         lat = findViewById(R.id.lat);
         lng = findViewById(R.id.lng);
-        btnsimpan.setOnClickListener(view -> {
-            pwp.onSubmit(new Pariwisata(
-                    Double.parseDouble(lat.getText().toString()),
-                    Double.parseDouble(lng.getText().toString()),
-                    judul.getText().toString(),
-                    desc.getText().toString()));
-        });
+//        btnsimpan.setOnClickListener(view -> {
+//            pwp.onSubmit(new Pariwisata(
+//                    Double.parseDouble(lat.getText().toString()),
+//                    Double.parseDouble(lng.getText().toString()),
+//                    judul.getText().toString(),
+//                    desc.getText().toString()));
+//        });
 
     }
 
