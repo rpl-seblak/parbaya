@@ -48,7 +48,9 @@ public class CreateWisataActivity extends AppCompatActivity implements WisataCon
 //        });
 
     }
-
+    // Lingga Juliansyah
+// IF-7
+// 10119294
     @Override
     public void showProgress() {
         Log.i("progress","tampill...");

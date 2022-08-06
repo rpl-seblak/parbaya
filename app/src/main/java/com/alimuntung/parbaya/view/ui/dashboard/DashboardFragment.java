@@ -26,7 +26,9 @@ public class DashboardFragment extends Fragment {
         textView.setText("ini dashbor pragment");
         return root;
     }
-
+    // Lingga Juliansyah
+// IF-7
+// 10119294
     @Override
     public void onDestroyView() {
         super.onDestroyView();

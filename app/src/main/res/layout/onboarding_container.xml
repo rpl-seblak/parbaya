@@ -8,7 +8,9 @@
     android:layout_marginHorizontal="30dp"
     android:layout_marginBottom="70dp"
     >
-
+    <!--    // Lingga Juliansyah-->
+    <!--    // IF-7-->
+    <!--    // 10119294-->
     <ImageView
         android:id="@+id/imgOnboarding"
         android:layout_width="280dp"

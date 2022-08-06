@@ -42,7 +42,9 @@ public class PariwisataView extends AppCompatActivity implements Serializable {
                 finish();
             }
         });
-
+// Ikbar Laudza Alviansyah
+// IF-7
+// 10119260
 
     }
 }

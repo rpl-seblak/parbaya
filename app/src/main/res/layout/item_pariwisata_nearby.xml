@@ -14,7 +14,9 @@
         android:layout_marginLeft="10dp"
         android:src="@drawable/img_recomendation1" />
 
-
+    <!--    // Ikbar Laudza Alviansyah-->
+    <!--    // IF-7-->
+    <!--    // 10119260-->
     <TextView
         android:id="@+id/tvJudulwisata"
         android:layout_width="153dp"

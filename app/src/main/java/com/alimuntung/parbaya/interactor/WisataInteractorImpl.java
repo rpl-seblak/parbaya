@@ -18,7 +18,9 @@ public class WisataInteractorImpl implements WisataContract.Interactor {
         listener.onEnd();
         listener.onSuccess();
     }
-
+    // Lingga Juliansyah
+// IF-7
+// 10119294
     @Override
     public void showWisata(PariwisataDB db) {
         db.readPariwisata();

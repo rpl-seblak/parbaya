@@ -81,7 +81,9 @@ public class PariwisataDB {
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
             }
-
+            // Lingga Juliansyah
+// IF-7
+// 10119294
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
 

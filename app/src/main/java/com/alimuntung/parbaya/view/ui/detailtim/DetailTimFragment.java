@@ -38,7 +38,9 @@ public class DetailTimFragment extends Fragment {
 
         binding = FragmentDetailTimBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+// Lingga Juliansyah
+// IF-7
+// 10119294
 
         return root;
     }

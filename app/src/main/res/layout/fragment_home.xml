@@ -7,7 +7,9 @@
     android:orientation="vertical"
     tools:context=".view.ui.home.HomeFragment"
     android:padding="20dp">
-
+    <!--    // Lingga Juliansyah-->
+    <!--    // IF-7-->
+    <!--    // 10119294-->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"

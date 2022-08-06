@@ -4,7 +4,9 @@ public class OnBoardingItem {
     private String title;
     private String desc;
     private int img;
-
+    // Lingga Juliansyah
+// IF-7
+// 10119294
     public String getTitle() {
         return title;
     }

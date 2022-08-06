@@ -60,7 +60,9 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
          iv_thumbnail = itemView.findViewById(R.id.ivThumbnail);
 
         }
-
+        // Ikbar Laudza Alviansyah
+// IF-7
+// 10119260
         void setNearbyWisataData(Pariwisata pw){
             tv_judul.setText(pw.getJudul());
             tv_lokasi.setText(pw.getAlamat());

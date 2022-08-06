@@ -12,6 +12,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+// Lingga Juliansyah
+// IF-7
+// 10119294
+
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;

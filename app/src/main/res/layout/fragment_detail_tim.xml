@@ -7,7 +7,9 @@
     tools:context=".view.ui.detailtim.DetailTimFragment"
     android:padding="20dp"
     >
-
+<!--    // Ikra Esa A'raaf Mahardika-->
+<!--    // IF-7-->
+<!--    // 10119271-->
     <LinearLayout
         android:id="@+id/profilesIndicator"
         android:layout_width="wrap_content"

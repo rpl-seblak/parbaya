@@ -9,7 +9,9 @@ public class ProfileItem {
         this.nama = nama;
         this.pp = pp;
     }
-
+    // Lingga Juliansyah
+// IF-7
+// 10119294
     public String getNim() {
         return nim;
     }

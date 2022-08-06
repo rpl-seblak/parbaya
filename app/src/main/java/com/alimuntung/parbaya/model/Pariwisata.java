@@ -23,8 +23,9 @@ public class Pariwisata implements Serializable
         this.alamat = alamat;
         this.url = url;
     }
-
-
+    // Ikbar Laudza Alviansyah
+// IF-7
+// 10119260
     public Double getLat() {
         return lat;
     }
