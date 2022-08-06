@@ -2,22 +2,42 @@ package com.alimuntung.parbaya.view.ui.maps;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.alimuntung.parbaya.R;
+import com.alimuntung.parbaya.contractor.WisataContract;
+import com.alimuntung.parbaya.model.Pariwisata;
+import com.alimuntung.parbaya.presenter.PariwisataPresenter;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
-public class fragment_maps_pariwisata extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
+
+public class fragment_maps_pariwisata extends Fragment implements WisataContract.WisataView {
+    private FusedLocationProviderClient mFusedclient;
+    private SupportMapFragment mapFragment;
+    private Location lokasi;
+    private List<Pariwisata> pariwisataList;
+    private PariwisataPresenter pwp;
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -32,9 +52,18 @@ public class fragment_maps_pariwisata extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng curcloc = new LatLng(lokasi.getLatitude(),lokasi.getLongitude());
+            googleMap.addMarker(new MarkerOptions().position(curcloc).title("Lokasi Anda Sekarang"));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curcloc,15f));
+
+            for (int i=0; i<pariwisataList.size();i++){
+                googleMap.addMarker(new MarkerOptions().position(
+                        new LatLng(
+                                pariwisataList.get(i).getLat(),
+                                pariwisataList.get(i).getLng()
+                        )).title(pariwisataList.get(i).getJudul()));
+            }
+            Log.i("testsukses", String.valueOf(pariwisataList.size()));
         }
     };
 
@@ -43,16 +72,57 @@ public class fragment_maps_pariwisata extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_maps_pariwisata, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_maps_pariwisata, container, false);
+        return rootView;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        SupportMapFragment mapFragment =
+        mFusedclient = LocationServices.getFusedLocationProviderClient(getActivity());
+        mapFragment =
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         if (mapFragment != null) {
-            mapFragment.getMapAsync(callback);
+            getLocation();
         }
+        pwp = new PariwisataPresenter(this);
+        pwp.onLoadWisata();
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void showListWisata(ArrayList<Pariwisata> pariwisatas) {
+    pariwisataList = pariwisatas;
+    }
+
+    @Override
+    public void showMessage() {
+
+    }
+    private void getLocation() {
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+        }
+        Task<Location> task = mFusedclient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location locationnow) {
+                if(locationnow != null){
+                    lokasi = locationnow;
+                    mapFragment.getMapAsync(callback);
+                }
+            }
+        });
+
     }
 }

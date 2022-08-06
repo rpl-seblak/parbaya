@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.alimuntung.parbaya.view.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:id="@+id/navigation_maps"
+        android:name="com.alimuntung.parbaya.view.ui.maps.fragment_maps_pariwisata"
+        android:label="@string/map"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment

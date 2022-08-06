@@ -32,7 +32,6 @@ public class HomeFragment extends Fragment implements WisataContract.WisataView 
     private PariwisataPresenter pwp;
     private FragmentHomeBinding binding;
     private List<Pariwisata> nearbyPariwisataList;
-    private PariwisataDB pariwisataDB;
     private NearbyWisataAdapter nearbyWisataAdapter;
     private RecyclerView rvPariwisata;
 
@@ -55,10 +54,7 @@ public class HomeFragment extends Fragment implements WisataContract.WisataView 
         binding = null;
     }
 
-    private void read(){
 
-
-    }
 
     @Override
     public void showProgress() {
