@@ -18,7 +18,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivThumbnailView"
         android:layout_width="398dp"
         android:layout_height="268dp"
 

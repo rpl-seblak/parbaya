@@ -1,9 +1,10 @@
 package com.alimuntung.parbaya.adapter;
 
-import android.content.Intent;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,11 +51,14 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
         private TextView tv_judul;
         private CardView cv_wisata;
         private TextView tv_lokasi;
+        private ImageView iv_thumbnail;
         public NearbyWisataViewHolder(@NonNull View itemView){
             super(itemView);
          tv_judul = itemView.findViewById(R.id.tvJudulwisata);
          cv_wisata = itemView.findViewById(R.id.cvWisata);
          tv_lokasi = itemView.findViewById(R.id.tvLokasiWisata);
+         iv_thumbnail = itemView.findViewById(R.id.ivThumbnail);
+
         }
 
         void setNearbyWisataData(Pariwisata pw){
@@ -66,6 +70,7 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
                 listener.onItemClicked(pw);
                 }
             });
+         //   Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
 
         }
     }
