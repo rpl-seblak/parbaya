@@ -13,6 +13,10 @@ public class WisataContract {
         void showMessage();
     }
 
+    public interface WisataListener {
+        void onItemClicked(Pariwisata pariwisata);
+    }
+
     public interface Interactor{
         void storeWisata(Pariwisata pws, PariwisataDB db);
         void showWisata(PariwisataDB db);

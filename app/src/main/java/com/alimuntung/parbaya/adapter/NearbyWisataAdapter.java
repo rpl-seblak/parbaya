@@ -1,5 +1,6 @@
 package com.alimuntung.parbaya.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alimuntung.parbaya.R;
+import com.alimuntung.parbaya.contractor.WisataContract;
 import com.alimuntung.parbaya.model.Pariwisata;
 
 import java.util.List;
@@ -17,9 +19,11 @@ import java.util.List;
 public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapter.NearbyWisataViewHolder> {
 
     private List<Pariwisata> nearbyPariwisataList;
+    private WisataContract.WisataListener listener;
 
-    public NearbyWisataAdapter(List<Pariwisata> nearbyPariwisataList){
+    public NearbyWisataAdapter(List<Pariwisata> nearbyPariwisataList, WisataContract.WisataListener listener){
         this.nearbyPariwisataList= nearbyPariwisataList;
+        this.listener=listener;
     }
 
     @NonNull
@@ -51,6 +55,12 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
 
         void setNearbyWisataData(Pariwisata pw){
             tv_judul.setText(pw.getJudul());
+            cv_wisata.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                listener.onItemClicked(pw);
+                }
+            });
 
         }
     }

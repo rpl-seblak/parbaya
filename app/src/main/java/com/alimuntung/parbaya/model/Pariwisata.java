@@ -1,6 +1,8 @@
 package com.alimuntung.parbaya.model;
 
-public class Pariwisata
+import java.io.Serializable;
+
+public class Pariwisata implements Serializable
 {
     private Double lat;
     private Double lng;

@@ -2,33 +2,26 @@ package com.alimuntung.parbaya.view.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.alimuntung.parbaya.R;
 import com.alimuntung.parbaya.adapter.NearbyWisataAdapter;
 import com.alimuntung.parbaya.contractor.WisataContract;
-import com.alimuntung.parbaya.databinding.FragmentHomeBinding;
 import com.alimuntung.parbaya.model.Pariwisata;
-import com.alimuntung.parbaya.model.PariwisataDB;
 import com.alimuntung.parbaya.presenter.PariwisataPresenter;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
+import com.alimuntung.parbaya.view.ui.PariwisataView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements WisataContract.WisataView {
+public class HomeFragment extends Fragment implements WisataContract.WisataView, WisataContract.WisataListener {
     private PariwisataPresenter pwp;
     private FragmentHomeBinding binding;
     private List<Pariwisata> nearbyPariwisataList;
@@ -69,7 +62,7 @@ public class HomeFragment extends Fragment implements WisataContract.WisataView 
     @Override
     public void showListWisata(ArrayList<Pariwisata> pariwisatas) {
         nearbyPariwisataList = pariwisatas;
-        nearbyWisataAdapter = new NearbyWisataAdapter(nearbyPariwisataList);
+        nearbyWisataAdapter = new NearbyWisataAdapter(nearbyPariwisataList, this);
         rvPariwisata.setLayoutManager(new LinearLayoutManager(getContext()));
         rvPariwisata.setAdapter(nearbyWisataAdapter);
     }
@@ -80,4 +73,10 @@ public class HomeFragment extends Fragment implements WisataContract.WisataView 
     }
 
 
+    @Override
+    public void onItemClicked(Pariwisata pariwisata) {
+        Intent intent = new Intent(getActivity(), PariwisataView.class);
+        intent.putExtra("wisata", pariwisata);
+        startActivity(intent);
+    }
 }
