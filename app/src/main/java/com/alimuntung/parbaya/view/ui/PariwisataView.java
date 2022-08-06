@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.alimuntung.parbaya.R;
 import com.alimuntung.parbaya.model.Pariwisata;
+import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
@@ -32,9 +33,10 @@ public class PariwisataView extends AppCompatActivity implements Serializable {
         backBtn= findViewById(R.id.backviewButton);
         alamat = findViewById(R.id.LokasiDetail);
         deskripsi = findViewById(R.id.deskripsiwisata);
-
+        thumbnail = findViewById(R.id.ivThumbnailView);
         alamat.setText(wisata.getAlamat());
         deskripsi.setText(wisata.getDeskripsi());
+
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +44,9 @@ public class PariwisataView extends AppCompatActivity implements Serializable {
                 finish();
             }
         });
+
+        Glide.with(this).load(wisata.getUrl()).into(thumbnail);
+
 // Ikbar Laudza Alviansyah
 // IF-7
 // 10119260

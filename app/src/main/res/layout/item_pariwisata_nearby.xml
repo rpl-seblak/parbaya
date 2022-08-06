@@ -7,34 +7,48 @@
     android:layout_margin="10dp"
     >
 
-    <ImageView
-        android:id="@+id/ivThumbnail"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/img_recomendation1" />
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/img_recomendation1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvJudulwisata"
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Floating Market"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLokasiWisata"
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="108dp"
+                android:text="Lembang, Bandung"
+                android:textSize="12dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <!--    // Ikbar Laudza Alviansyah-->
     <!--    // IF-7-->
     <!--    // 10119260-->
-    <TextView
-        android:id="@+id/tvJudulwisata"
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="15dp"
-        android:text="Floating Market"
-        android:textSize="18dp"
-        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvLokasiWisata"
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="108dp"
-        android:layout_marginTop="50dp"
-        android:text="Lembang, Bandung"
-        android:textSize="12dp">
-
-    </TextView>
 </androidx.cardview.widget.CardView>

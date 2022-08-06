@@ -1,6 +1,7 @@
 package com.alimuntung.parbaya.adapter;
 
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alimuntung.parbaya.R;
 import com.alimuntung.parbaya.contractor.WisataContract;
 import com.alimuntung.parbaya.model.Pariwisata;
+import com.bumptech.glide.Glide;
+
 
 import org.w3c.dom.Text;
 
@@ -39,7 +42,8 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
 
     @Override
     public void onBindViewHolder(@NonNull NearbyWisataViewHolder holder, int position) {
-        holder.setNearbyWisataData(nearbyPariwisataList.get(position));
+        holder.setNearbyWisataData(nearbyPariwisataList.get(position),holder);
+        Glide.with(holder.itemView.getContext()).load(nearbyPariwisataList.get(position).getUrl()).into(holder.iv_thumbnail);
     }
 
     @Override
@@ -63,7 +67,7 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
         // Ikbar Laudza Alviansyah
 // IF-7
 // 10119260
-        void setNearbyWisataData(Pariwisata pw){
+        void setNearbyWisataData(Pariwisata pw, NearbyWisataViewHolder view){
             tv_judul.setText(pw.getJudul());
             tv_lokasi.setText(pw.getAlamat());
             cv_wisata.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +76,8 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
                 listener.onItemClicked(pw);
                 }
             });
-         //   Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
 
+            Log.i("test",pw.getUrl().toString());
         }
     }
 
