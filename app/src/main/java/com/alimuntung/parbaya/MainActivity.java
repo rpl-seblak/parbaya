@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
     private void setOnBoardingItems(){
         List<OnBoardingItem> onBoardingItems = new ArrayList<>();
 
-        OnBoardingItem item1 = setOnBoardingItem("lorem1","lorem1",R.drawable.onboard1);
-        OnBoardingItem item2 = setOnBoardingItem("lorem2","lorem2",R.drawable.onboard2);
-        OnBoardingItem item3 = setOnBoardingItem("lorem3","lorem3",R.drawable.onboard3);
+        OnBoardingItem item1 = setOnBoardingItem("WISATA","Temukan Tempat Wisata Terbaik",R.drawable.onboard1);
+        OnBoardingItem item2 = setOnBoardingItem("KAB.BANDUNG","Merekomendasikan Tempat wisata di daerah Bandung",R.drawable.onboard2);
+        OnBoardingItem item3 = setOnBoardingItem("EXPLORE","Ekplorasi tempat wisata Terfavorit dan Instagramable",R.drawable.onboard3);
         onBoardingItems.add(item1);
         onBoardingItems.add(item2);
         onBoardingItems.add(item3);

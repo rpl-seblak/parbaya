@@ -20,15 +20,17 @@
 
     <TextView
         android:id="@+id/textTitle"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="32sp"
-        android:text="Lorem Ipsum"
+        android:text="PARBAYA"
         android:textFontWeight="600"
         android:textAlignment="center"
         />
     <TextView
         android:id="@+id/textDescription"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
