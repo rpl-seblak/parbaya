@@ -4,54 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.detailtim.DetailTimFragment">
+    tools:context=".view.ui.detailtim.DetailTimFragment"
+    android:padding="20dp"
+    >
 
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="374dp"
-        android:layout_height="500dp"
+    <LinearLayout
+        android:id="@+id/profilesIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081">
+        android:layout_marginBottom="90dp"
+        ></LinearLayout>
 
-        <ImageView
-            android:layout_width="239dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="55dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/fotoprofil" />
-
-        <TextView
-            android:id="@+id/nama1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
-            android:layout_marginLeft="30dp"
-            android:text="Ikra Esa A'raaf Mahardika"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/nim1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="295dp"
-            android:layout_marginLeft="30dp"
-            android:text="10119271"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/kelas1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="335dp"
-            android:layout_marginLeft="30dp"
-            android:text="IF7"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-    </androidx.cardview.widget.CardView>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pagerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

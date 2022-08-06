@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alimuntung.parbaya.R;
 import com.alimuntung.parbaya.adapter.NearbyWisataAdapter;
 import com.alimuntung.parbaya.contractor.WisataContract;
+import com.alimuntung.parbaya.databinding.FragmentHomeBinding;
 import com.alimuntung.parbaya.model.Pariwisata;
 import com.alimuntung.parbaya.presenter.PariwisataPresenter;
 import com.alimuntung.parbaya.view.ui.PariwisataView;
