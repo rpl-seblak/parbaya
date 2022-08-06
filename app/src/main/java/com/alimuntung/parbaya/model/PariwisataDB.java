@@ -21,7 +21,7 @@ import java.util.function.Function;
 public class PariwisataDB {
     private DatabaseReference databaseReference;
     private WisataContract.onOperationListener listener;
-    private ArrayList<Pariwisata> listPariwisata;
+    private ArrayList<Pariwisata> listPariwisata = new ArrayList<>();
     public PariwisataDB(WisataContract.onOperationListener listener){
       FirebaseDatabase db = FirebaseDatabase.getInstance();
       databaseReference = db.getReference(Pariwisata.class.getSimpleName());
@@ -51,48 +51,53 @@ public class PariwisataDB {
 
     public void readPariwisata(){
         listener.onStart();
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Pariwisata pws = snapshot.getValue(Pariwisata.class);
-                listPariwisata.add(pws);
-                listener.onRead(listPariwisata);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                listener.onFailure();
-            }
-        });
-        listener.onSuccess();
-        listener.onEnd();
-//        databaseReference.addChildEventListener(new ChildEventListener() {
+//        databaseReference.addValueEventListener(new ValueEventListener() {
 //            @Override
-//            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
 //                Pariwisata pws = snapshot.getValue(Pariwisata.class);
-//                listPariwisata.add(pws);
+////                System.out.println(pws.getJudul());
+//                Log.i("SNAPSHOT",pws.toString());
+////                listPariwisata.add(pws);
 //                listener.onRead(listPariwisata);
 //            }
 //
 //            @Override
-//            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//            }
-//
-//            @Override
 //            public void onCancelled(@NonNull DatabaseError error) {
-//
+//                listener.onFailure();
 //            }
 //        });
+//        listener.onSuccess();
+//        listener.onEnd();
+        databaseReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Pariwisata pws = snapshot.getValue(Pariwisata.class);
+                listPariwisata.add(pws);
+                listener.onRead(listPariwisata);
+//                Log.i("SNAPSHOT",String.valueOf(listPariwisata.size()));
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+                listener.onSuccess();
+                listener.onEnd();
     }
 }

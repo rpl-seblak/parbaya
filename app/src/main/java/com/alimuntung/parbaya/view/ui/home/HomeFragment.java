@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -19,6 +20,7 @@ import com.alimuntung.parbaya.contractor.WisataContract;
 import com.alimuntung.parbaya.databinding.FragmentHomeBinding;
 import com.alimuntung.parbaya.model.Pariwisata;
 import com.alimuntung.parbaya.model.PariwisataDB;
+import com.alimuntung.parbaya.presenter.PariwisataPresenter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -26,10 +28,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
-
+public class HomeFragment extends Fragment implements WisataContract.WisataView {
+    private PariwisataPresenter pwp;
     private FragmentHomeBinding binding;
-    private WisataContract wisataContract;
     private List<Pariwisata> nearbyPariwisataList;
     private PariwisataDB pariwisataDB;
     private NearbyWisataAdapter nearbyWisataAdapter;
@@ -37,17 +38,15 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        nearbyPariwisataList = new ArrayList<>();
         rvPariwisata = getView().findViewById(R.id.rvPariwisata);
-        read();
-
+        pwp = new PariwisataPresenter(this);
+        pwp.onLoadWisata();
         }
 
     @Override
@@ -60,4 +59,29 @@ public class HomeFragment extends Fragment {
 
 
     }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void showListWisata(ArrayList<Pariwisata> pariwisatas) {
+        nearbyPariwisataList = pariwisatas;
+        nearbyWisataAdapter = new NearbyWisataAdapter(nearbyPariwisataList);
+        rvPariwisata.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvPariwisata.setAdapter(nearbyWisataAdapter);
+    }
+
+    @Override
+    public void showMessage() {
+
+    }
+
+
 }
