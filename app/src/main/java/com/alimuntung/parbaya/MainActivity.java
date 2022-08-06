@@ -1,11 +1,16 @@
 package com.alimuntung.parbaya;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.alimuntung.parbaya.adapter.OnBoardingAdapter;
 import com.alimuntung.parbaya.helper.OnBoardingItem;
@@ -20,20 +25,29 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private OnBoardingAdapter onBoardingAdapter;
     private Button lets;
+    private LinearLayout onBoardingIndicatorLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lets = findViewById(R.id.getstart);
+        onBoardingIndicatorLayout = findViewById(R.id.onboardingIndicator);
         setOnBoardingItems();
+        setupOnBoardingIndicator();
+        setupOnBoardingActive(0);
+
+
 
         ViewPager2 onBoardingViewPager = findViewById(R.id.onboarding);
         onBoardingViewPager.setAdapter(onBoardingAdapter);
 
-
-//        PariwisataDB pwd = new PariwisataDB();
-//        Pariwisata pw = new Pariwisata(2.0, 2.0, "test","coba");
-//        pwd.add(pw);
+        onBoardingViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                setupOnBoardingActive(position);
+            }
+        });
         lets.setOnClickListener(
                 view -> {
                     Intent intent = new Intent(this, HomeActivity.class);
@@ -58,6 +72,35 @@ public class MainActivity extends AppCompatActivity {
         onBoardingItems.add(item2);
         onBoardingItems.add(item3);
         onBoardingAdapter = new OnBoardingAdapter(onBoardingItems);
+    }
+
+    private void setupOnBoardingIndicator(){
+        ImageView[] indicators = new ImageView[onBoardingAdapter.getItemCount()];
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        layoutParams.setMargins(8,0,8,0);
+        for (int i = 0; i < indicators.length; i++){
+            indicators[i] = new ImageView(getApplicationContext());
+            indicators[i].setImageDrawable(ContextCompat.getDrawable(
+                    getApplicationContext(),
+                    R.drawable.onboarding_indicator_active
+            ));
+            indicators[i].setLayoutParams(layoutParams);
+            onBoardingIndicatorLayout.addView(indicators[i]);
+        }
+    }
+
+    private void setupOnBoardingActive(int index){
+        int childcount = onBoardingIndicatorLayout.getChildCount();
+        for(int i = 0; i < childcount; i++){
+            ImageView imageView = (ImageView) onBoardingIndicatorLayout.getChildAt(i);
+            if(i==index){
+                imageView.setColorFilter(Color.parseColor("#37355B"));
+            }else{
+                imageView.setColorFilter(Color.parseColor("#FFFFFF"));
+            }
+        }
     }
 
     private OnBoardingItem setOnBoardingItem(String title,String desc,int img){
