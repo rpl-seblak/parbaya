@@ -24,7 +24,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DetailTimFragment extends Fragment {
-
+    /* Createdby
+     * NIM : 10119294
+     * NAMA : Lingga Juliansyah
+     * Kelas : IF-7
+     * */
     private FragmentDetailTimBinding binding;
     private ProfilesAdapter profilesAdapter;
     private LinearLayout profileIndicatorLayout;

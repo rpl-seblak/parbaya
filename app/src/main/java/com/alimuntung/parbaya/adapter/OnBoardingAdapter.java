@@ -15,7 +15,11 @@ import com.alimuntung.parbaya.helper.OnBoardingItem;
 import java.util.List;
 
 public class OnBoardingAdapter extends RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewHolder>{
-
+    /*  createdby
+     * NIM : 10119294
+     * NAMA : Lingga Juliansyah
+     * Kelas : IF-7
+     * */
     private List<OnBoardingItem> onBoardingItemList;
 
     public OnBoardingAdapter(List<OnBoardingItem> onBoardingItemList) {

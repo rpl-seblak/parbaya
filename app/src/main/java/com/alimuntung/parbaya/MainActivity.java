@@ -23,6 +23,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    /* createdby
+     * NIM : 10119294
+     * NAMA : Lingga Juliansyah
+     * Kelas : IF-7
+     * */
     private OnBoardingAdapter onBoardingAdapter;
     private Button lets;
     private LinearLayout onBoardingIndicatorLayout;

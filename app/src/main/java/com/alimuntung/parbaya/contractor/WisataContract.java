@@ -6,6 +6,11 @@ import com.alimuntung.parbaya.model.PariwisataDB;
 import java.util.ArrayList;
 
 public class WisataContract {
+    /* MVP createdby
+     * NIM : 10119294
+     * NAMA : Lingga Juliansyah
+     * Kelas : IF-7
+     * */
     public interface WisataView {
         void showProgress();
         void hideProgress();

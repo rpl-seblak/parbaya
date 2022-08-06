@@ -16,6 +16,11 @@ import com.alimuntung.parbaya.helper.ProfileItem;
 import java.util.List;
 
 public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.ProfilesViewHolder>{
+    /* createdby
+     * NIM : 10119294
+     * NAMA : Lingga Juliansyah
+     * Kelas : IF-7
+     * */
     private List<ProfileItem> profileItems;
 
     public ProfilesAdapter(List<ProfileItem> profileItems) {
