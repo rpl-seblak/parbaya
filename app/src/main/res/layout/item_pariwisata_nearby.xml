@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView
+    android:id="@+id/cvWisata"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
+
+    <ImageView
+        android:id="@+id/ivThumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/img_recomendation1" />
+
+
+    <TextView
+        android:id="@+id/tvJudulwisata"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="15dp"
+        android:text="Floating Market"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLokasiWisata"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="50dp"
+        android:text="Lembang, Bandung"
+        android:textSize="12dp">
+
+    </TextView>
+</androidx.cardview.widget.CardView>
+
+</LinearLayout>

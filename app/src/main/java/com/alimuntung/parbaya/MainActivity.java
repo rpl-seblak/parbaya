@@ -12,6 +12,7 @@ import com.alimuntung.parbaya.helper.OnBoardingItem;
 import com.alimuntung.parbaya.model.Pariwisata;
 import com.alimuntung.parbaya.model.PariwisataDB;
 import com.alimuntung.parbaya.view.CreateWisataActivity;
+import com.alimuntung.parbaya.view.HomeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //        pwd.add(pw);
         lets.setOnClickListener(
                 view -> {
-                    Intent intent = new Intent(this, CreateWisataActivity.class);
+                    Intent intent = new Intent(this, HomeActivity.class);
                     startActivity(intent);
                 }
         );
