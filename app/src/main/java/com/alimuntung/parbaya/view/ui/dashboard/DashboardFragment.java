@@ -29,6 +29,7 @@ public class DashboardFragment extends Fragment {
     // Lingga Juliansyah
 // IF-7
 // 10119294
+    // 06-08-2022
     @Override
     public void onDestroyView() {
         super.onDestroyView();

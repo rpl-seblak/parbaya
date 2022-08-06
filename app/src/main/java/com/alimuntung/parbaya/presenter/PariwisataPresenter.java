@@ -17,8 +17,9 @@ public class PariwisataPresenter implements WisataContract.Presenter, WisataCont
         interactor = new WisataInteractorImpl(this);
     }
     // Lingga Juliansyah
-// IF-7
-// 10119294
+    // IF-7
+    // 10119294
+    // 06-08-2022
     @Override
     public void onLoadWisata() {
         interactor.showWisata(pwd);

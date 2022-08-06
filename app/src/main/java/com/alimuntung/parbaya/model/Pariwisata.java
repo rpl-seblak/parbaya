@@ -26,6 +26,7 @@ public class Pariwisata implements Serializable
     // Ikbar Laudza Alviansyah
 // IF-7
 // 10119260
+    // 06-08-2022
     public Double getLat() {
         return lat;
     }

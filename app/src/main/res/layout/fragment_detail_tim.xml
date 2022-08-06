@@ -10,6 +10,7 @@
 <!--    // Ikra Esa A'raaf Mahardika-->
 <!--    // IF-7-->
 <!--    // 10119271-->
+    <!--    // 06-08-2022-->
     <LinearLayout
         android:id="@+id/profilesIndicator"
         android:layout_width="wrap_content"

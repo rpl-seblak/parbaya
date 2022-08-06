@@ -40,7 +40,10 @@ public class fragment_maps_pariwisata extends Fragment implements WisataContract
     private PariwisataPresenter pwp;
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
-
+        // Ikbar Laudza Alviansyah
+// IF-7
+// 10119260
+        // 06-08-2022
         /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.

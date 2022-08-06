@@ -36,6 +36,7 @@
 <!--    // Aldi Rezeki Ramdani-->
 <!--    // IF-7-->
 <!--    // 10119273-->
+    <!--    // 06-08-2022-->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/onboarding"
         android:layout_width="match_parent"

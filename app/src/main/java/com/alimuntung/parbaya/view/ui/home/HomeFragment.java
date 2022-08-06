@@ -76,6 +76,7 @@ public class HomeFragment extends Fragment implements WisataContract.WisataView,
     // Ikbar Laudza Alviansyah
 // IF-7
 // 10119260
+    // 06-08-2022
     @Override
     public void onItemClicked(Pariwisata pariwisata) {
         Intent intent = new Intent(getActivity(), PariwisataView.class);

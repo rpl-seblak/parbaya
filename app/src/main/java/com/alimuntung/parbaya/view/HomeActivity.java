@@ -14,7 +14,8 @@ import androidx.navigation.ui.NavigationUI;
 
 // Lingga Juliansyah
 // IF-7
-// 10119294
+// 10119294\
+// 06-08-2022
 
 public class HomeActivity extends AppCompatActivity {
 

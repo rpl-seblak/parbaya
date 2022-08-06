@@ -12,6 +12,7 @@ public class ProfileItem {
     // Lingga Juliansyah
 // IF-7
 // 10119294
+    // 06-08-2022
     public String getNim() {
         return nim;
     }

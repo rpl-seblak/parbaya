@@ -67,6 +67,7 @@ public class NearbyWisataAdapter extends RecyclerView.Adapter<NearbyWisataAdapte
         // Ikbar Laudza Alviansyah
 // IF-7
 // 10119260
+        // 06-08-2022
         void setNearbyWisataData(Pariwisata pw, NearbyWisataViewHolder view){
             tv_judul.setText(pw.getJudul());
             tv_lokasi.setText(pw.getAlamat());

@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
      * NIM : 10119294
      * NAMA : Lingga Juliansyah
      * Kelas : IF-7
+     * // 06-08-2022
      * */
     private OnBoardingAdapter onBoardingAdapter;
     private Button lets;

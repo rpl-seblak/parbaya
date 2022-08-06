@@ -20,6 +20,7 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.Profil
      * NIM : 10119294
      * NAMA : Lingga Juliansyah
      * Kelas : IF-7
+     * // 06-08-2022
      * */
     private List<ProfileItem> profileItems;
 

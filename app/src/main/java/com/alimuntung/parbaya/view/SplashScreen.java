@@ -23,7 +23,8 @@ public class SplashScreen extends AppCompatActivity {
         }, 4000);
 
 // Aldi Rezeki Ramdani
-// IF-7
-// 10119273
+//// IF-7
+//// 10119273
+        // 06-08-2022
     }
 }

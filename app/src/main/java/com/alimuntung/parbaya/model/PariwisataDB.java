@@ -82,8 +82,9 @@ public class PariwisataDB {
 
             }
             // Lingga Juliansyah
-// IF-7
-// 10119294
+            // IF-7
+            // 10119294
+            // 06-08-2022
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
 

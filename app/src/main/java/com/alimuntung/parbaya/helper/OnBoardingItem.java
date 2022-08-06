@@ -7,6 +7,7 @@ public class OnBoardingItem {
     // Lingga Juliansyah
 // IF-7
 // 10119294
+    // 06-08-2022
     public String getTitle() {
         return title;
     }
