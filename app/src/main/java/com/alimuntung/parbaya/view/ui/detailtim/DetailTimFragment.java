@@ -1,29 +1,26 @@
-package com.alimuntung.parbaya.view.ui.notifications;
+package com.alimuntung.parbaya.view.ui.detailtim;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.alimuntung.parbaya.databinding.FragmentNotificationsBinding;
+import com.alimuntung.parbaya.databinding.FragmentDetailTimBinding;
 
-public class NotificationsFragment extends Fragment {
+public class DetailTimFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentDetailTimBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentDetailTimBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textNotifications;
-        textView.setText("ini notip pragment");
+
         return root;
     }
 
